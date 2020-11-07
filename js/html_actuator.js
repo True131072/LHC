@@ -57,7 +57,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 2048) classes.push("tile-super");
+  if (tile.value > 131072) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -69,12 +69,17 @@ HTMLActuator.prototype.addTile = function (tile) {
   outputtext[4] = "muon neutrino";
   outputtext[5] = "tau";
   outputtext[6] = "tau neutrino";
-  outputtext[7] = "gluon";
-  outputtext[8] = "photon";
-  outputtext[9] = "Z boson";
-  outputtext[10] = "W boson";
-  outputtext[11] = "Higgs Boson";
-
+  outputtext[7] = "up";
+  outputtext[8] = "down";
+  outputtext[9] = "charm";
+  outputtext[10] = "strange";
+  outputtext[11] = "top";
+  outputtext[12] = "bottom";
+  outputtext[13] = "gluon";
+  outputtext[14] = "photon";
+  outputtext[15] = "Z boson";
+  outputtext[16] = "W boson";
+  outputtext[17] = "higgs";
 
   inner.classList.add("tile-inner");
   inner.textContent = outputtext[(Math.log(tile.value) / Math.LN2)] || '';
